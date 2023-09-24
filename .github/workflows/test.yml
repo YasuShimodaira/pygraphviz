@@ -148,9 +148,9 @@ jobs:
       run: |
         pip install --upgrade pip wheel setuptools
         pip install -r requirements/test.txt
-        pip install --global-option=build_ext \
-                    --global-option="-I/opt/local/include/" \
-                    --global-option="-L/opt/local/lib/" \
+        pip install --build-option=build_ext \
+                    --build-option="-I/opt/local/include/" \
+                    --build-option="-L/opt/local/lib/" \
                     .
         pip list
 
@@ -194,9 +194,9 @@ jobs:
         python -m pip install --upgrade pip wheel setuptools
         python -m pip install -r requirements/test.txt
         python -m pip install --use-pep517 `
-          --config-setting="--global-option=build_ext" `
-          --config-setting="--global-option=-I$($env:WIN_GRAPHVIZ_DIR)\include" `
-          --config-setting="--global-option=-L$($env:WIN_GRAPHVIZ_DIR)\lib" `
+          --config-setting="--build-option=build_ext" `
+          --config-setting="--build-option=-I$($env:WIN_GRAPHVIZ_DIR)\include" `
+          --config-setting="--build-option=-L$($env:WIN_GRAPHVIZ_DIR)\lib" `
           .
         python -m pip list
 
