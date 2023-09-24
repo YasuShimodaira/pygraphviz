@@ -148,7 +148,7 @@ jobs:
         python -m pip install --upgrade pip wheel setuptools
         python -m pip install -r requirements/test.txt
         python -m pip install --use-pep517 `
-          --global-option=build_ext" `
+          --global-option=build_ext `
           --global-option="-I$($env:WIN_GRAPHVIZ_DIR)\include" `
           --global-option="-L$($env:WIN_GRAPHVIZ_DIR)\lib" `
           .
